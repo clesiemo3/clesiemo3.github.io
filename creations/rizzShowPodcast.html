@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<style>
+#center {
+		background-color: #808080;
+		margin-left: auto;
+		margin-right: auto;
+		width: 850px;
+		border-style: solid;
+		border-width: 8px;
+		border-color: #000000;
+		overflow: hidden;
+}
+h1 {
+	font-size: 50px;
+	color: #232323;
+	font-family: "Open Sans",Helvetica,Arial,sans-serif;
+	font-weight: 100;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#show {
+		margin-left: auto;
+		margin-right: auto;
+		width: 690px;
+}
+#content {
+		text-align: center;
+		width:100%;
+}
+audio {
+	width: 80%;
+}
+</style>
+<html>
+<link rel="shortcut icon" href="http://www.1057thepoint.com/sites/all/themes/bootstrap_emmis/images/sites/kpnt/favicon.ico" />
+<title>Rizzuto Show Podcast</title>
+<body background="http://www.1057thepoint.com/sites/all/themes/bootstrap_emmis/images/sites/kpnt/background.jpg?1408116145">
+<div id="center">
+<div id="show"><img src="http://www.1057thepoint.com/sites/g/files/exi661/f/201411/RizzutoShow_690x175_01.jpg"></img></div>
+<H1>The Rizzuto Show Daily Podcast</H1>
+
+<div id="content">
+<p id="today"></p>
+<p id="6AM"></p>
+<p id="7AM"></p>
+<p id="8AM"></p>
+<p id="9AM"></p>
+</div>
+
+Alternative setup created by j. moore. All content owned by 105.7 The Point.
+
+</div>
+
+<script>
+var d = new Date();
+var year = d.getFullYear().toString().substr(2,2);
+var month = d.getMonth();
+var day = d.getDate();
+
+month = month + 1;
+month = month + "";
+day = day + "";
+
+if (month.length == 1)
+    {
+        month = "0" + month;
+    }
+if (day.length == 1)
+    {
+        day = "0" + day;
+    }
+
+dayString = month + "-" + day + "-" + year;
+
+var audio = "<audio controls><source src=\"http://traffic.libsyn.com/rizzuto/RIZZ_";
+var sixTrail = "_6AM.mp3\" type=\"audio/mpeg\"></audio>";
+var sevTrail = "_7AM.mp3\" type=\"audio/mpeg\"></audio>";
+var eightTrail = "_8AM.mp3\" type=\"audio/mpeg\"></audio>";
+var nineTrail = "_9AM.mp3\" type=\"audio/mpeg\"></audio>";
+
+var sixAm = "6 AM Podcast<BR>" + audio + dayString + sixTrail;
+var sevAm = "7 AM Podcast<BR>" + audio + dayString + sevTrail;
+var eightAm = "8 AM Podcast<BR>" + audio + dayString + eightTrail;
+var nineAm = "9 AM Podcast<BR>" + audio + dayString + nineTrail;
+
+document.getElementById("today").innerHTML = "<H3>" + dayString + "</H3>";
+document.getElementById("6AM").innerHTML = sixAm;
+document.getElementById("7AM").innerHTML = sevAm;
+document.getElementById("8AM").innerHTML = eightAm;
+document.getElementById("9AM").innerHTML = nineAm;
+</script>
+
+</body>
+</html>
