@@ -1,0 +1,108 @@
+body {
+	background-image: url("/graphics/code.jpg");
+	margin: 0;
+	padding: 0;	
+}
+
+#header {
+	clear: both;
+	position: fixed;
+	text-align: center;
+	color: white;
+	background-color: black;
+	left: 0;
+	right: 0;
+	top: 0;
+	font-size: 1.5em;
+	font-weight: bold;
+	z-index: 100;
+	margin-bottom: 15px;
+}
+
+#container {
+	text-align: center;
+	width: 80%;
+	margin: 50px auto;
+}
+
+#container .row {
+	/*background-color: black;*/
+	width: 100%;
+	height: 30%;
+	margin-top: 3.0%;
+	margin-bottom: 3.0%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#container .column{
+	height: 200px;
+	width: 29.0%;
+	min-width: 150px;
+	line-height: 200px;
+	position: relative;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#container .column a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -2;
+    left: -2;
+    text-decoration: none; /* No underlines on the link */
+	color: black;
+	font-weight: bold;
+	border: 2px white solid;
+}
+
+#header a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.blue-gradient {
+background: -moz-linear-gradient(-45deg,  rgba(30,87,153,0) 0%, rgba(30,87,153,1) 10%, rgba(30,87,153,1) 20%, rgba(9,132,226,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 90%, rgba(30,87,153,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(30,87,153,0)), color-stop(10%,rgba(30,87,153,1)), color-stop(20%,rgba(30,87,153,1)), color-stop(50%,rgba(9,132,226,1)), color-stop(80%,rgba(30,87,153,1)), color-stop(90%,rgba(30,87,153,1)), color-stop(100%,rgba(30,87,153,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  rgba(30,87,153,0) 0%,rgba(30,87,153,1) 10%,rgba(30,87,153,1) 20%,rgba(9,132,226,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 90%,rgba(30,87,153,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  rgba(30,87,153,0) 0%,rgba(30,87,153,1) 10%,rgba(30,87,153,1) 20%,rgba(9,132,226,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 90%,rgba(30,87,153,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  rgba(30,87,153,0) 0%,rgba(30,87,153,1) 10%,rgba(30,87,153,1) 20%,rgba(9,132,226,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 90%,rgba(30,87,153,0) 100%); /* IE10+ */
+background: linear-gradient(135deg,  rgba(30,87,153,0) 0%,rgba(30,87,153,1) 10%,rgba(30,87,153,1) 20%,rgba(9,132,226,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 90%,rgba(30,87,153,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#footer {
+	clear: both;
+	position: fixed;
+	text-align: center;
+	color: white;
+	background-color: black;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
