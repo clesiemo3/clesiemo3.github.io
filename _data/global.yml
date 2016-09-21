@@ -1,0 +1,9 @@
+# Site Settings
+title: 'clesiemo3'
+description: ''
+url: '' # the base hostname & protocol for your site
+footer_text: ''
+
+# Admin Settings
+admin_name: 'James Moore'
+admin_email: 'admin@clesiemo3.com'

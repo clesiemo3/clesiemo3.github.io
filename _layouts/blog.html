@@ -1,0 +1,17 @@
+{% include header.html %}
+
+    {% include title-group.html %}
+
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  {% for post in site.posts %}
+                      <span><ul>{{ post.date | date: "%m.%d.%y" }}</span> <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></ul>
+                  {% endfor %}
+                </div>
+            </div>
+        </div>
+    </article>
+
+{% include footer.html %}
