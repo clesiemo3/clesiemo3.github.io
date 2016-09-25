@@ -3,3 +3,5 @@ main:
     - { url: '/blog', text: 'Blog' }
     - { url: '/about', text: 'About' }
     - { url: 'https://github.com/clesiemo3', text: 'GitHub' }
+    - { url: 'https://twitter.com/clesiemo3', text: 'Twitter' }
+    - { url: 'https://www.linkedin.com/in/clesiemo3', text: 'LinkedIn'}
