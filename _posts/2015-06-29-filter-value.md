@@ -9,7 +9,7 @@ lead_text: 'Change Filter Value Across Multiple Tables and Schemes'
 
 This script will allow you to set all of your filters of a certain type (Radio Button in this example) to a specific value or Document Property. Combine this with a dropdown list linked to a Document Property and your users can filter with your custom drop down across the document.
 
-```python
+{% highlight python %}
 from Spotfire.Dxp.Application.Filters import RadioButtonFilter
 from Spotfire.Dxp.Data import DataManager
 
@@ -27,4 +27,4 @@ for i in range(0,numSchemes):
         #filt will be NoneType if that column is a different filter type
         if filt is not None:
             filt.Value = Document.Properties["col1DD"]
-```
+{% endhighlight %}

@@ -59,7 +59,7 @@ Next we get the upcoming week's schedule with the following function: `message +
 
 Using the Facebook graph api we update our token first: `graph = facebook.GraphAPI(auth_flow.update_token())`. Then we get all events for our group that start in the next two weeks to include in our announcement. 
 
-```
+{% highlight python %}
 graph = facebook.GraphAPI(auth_flow.update_token())
 groups = graph.get_object("me/groups")
 group_id = [x for x in groups['data'] if x['name'] == "Young Adult's Ministry at First Free Church, Manchester, MO"][0]['id']
@@ -69,19 +69,19 @@ until = now + two_weeks
 events = graph.get_object("195603127146892/events", 
                           since = now.strftime('%Y-%m-%d'), 
                           until = until.strftime('%Y-%m-%d'))
-```
+{% endhighlight %}
 
 A couple datetime masks are set up front for parsing and outputting data values in a consistent format.
 
-```
+{% highlight python %}
 fb_mask = '%Y-%m-%dT%H:%M:%S%z'
 efree_mask = '%a, %d %b %Y %H:%M:%S %z'
 output_mask = '%A %B %d %I:%M %p'
-```
+{% endhighlight %}
 
 If we have events show up in the date range, then we try to loop through and add them to the message:
 
-```
+{% highlight python %}
 url_stub = "https://www.facebook.com/events/"
 if events['data'] != []:
     message += "\nYoung Adults Events\n"
@@ -97,11 +97,11 @@ if events['data'] != []:
         print(e)
 else:
     message += "\nNo Young Adult Facebook Events in the next 2 weeks\n"
-```
+{% endhighlight %}
 
 Next we loop through the RSS feed to look for events coming up. Since this is an all church list, I exclude a few junior/senior high phrases as we don't have any kids that age. For items that have a url link to more info, i just swap the long url out with `...[truncated]` as the link is already included in the message.
 
-```
+{% highlight python %}
 message += "\n\nEfree Events\n"
 exclude = re.compile("(Junior High Spring Retreat|Senior High|KampOut)")
 for x in feed.entries:
@@ -116,26 +116,26 @@ for x in feed.entries:
         continue
     else:
         message += msg_x
-```
+{% endhighlight %}
 
 Lastly, unescape any html from RSS/other sources and we're ready to post! `print(message)` can be used for viewing your post before sending.
 
-```
+{% highlight python %}
 message = html.unescape(message)
 
 graph.put_wall_post(message = message, profile_id = group_id)
 #print(message)
-```
+{% endhighlight %}
 
 In order to make this automated I used a crontab setup on my raspberry pi. While I developed this on my macbook pro with a conda environment, I had a lot of trouble getting conda to work on the pi so I just resorted to trusty pip & virtualenvs to get the job done. That's while you'll see requirements.txt and pip-requirements.txt in the repo.
 
 I ran this in cron: `0 19 * * 3 ~/scripts/ya.news.sh` which in turn runs this:
 
-```
+{% highlight shell %}
 #!/usr/bin/env bash
 cd /home/pi/Code/young-adults-news
 /home/pi/virtualenvs/py3/bin/python main.py
-```
+{% endhighlight %}
 
 I used the `cd dir` to avoid being smart about referring to files in the repo. 
 
