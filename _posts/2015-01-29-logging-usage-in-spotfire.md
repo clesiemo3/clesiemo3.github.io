@@ -11,7 +11,7 @@ This is a script I wrote to help with tracking the usage of our Spotfire analyse
 
 No variables are required from Spotfire to make this work and you should be able to use this in any Spotfire analysis. The code is commented throughout but please feel free to ask questions or make suggestions.  
 
-```python
+{% highlight python %}
 ########
 #imports
 import time
@@ -62,4 +62,4 @@ file.close()
 Document.ActivePageReference = Document.Pages[0]
 #change navigation
 Document.Pages.NavigationMode = Document.Pages.NavigationMode.Tabs
-```
+{% endhighlight %}

@@ -11,7 +11,7 @@ I wrote this script to clear out my markings and filters when I am  setting new
 
 Potential improvements could be to bring in bookmarks that have been set and after resetting all the filters and markings you reapply your bookmark as a starting position.
 
-```python
+{% highlight python %}
 #This is a generic script to reset your filters for 1 scheme and clear your marking for a specific table
 #required Spotfire variable: dataTable to clear your marking on.
 
@@ -57,6 +57,6 @@ rowCount = t.RowCount
 #sets an IndexSet the size of your table with no values marked (False)
 rowsToMark = IndexSet(rowCount,False)
 m.SetSelection(RowSelection(rowsToMark),t)
-```
+{% endhighlight %}
 
 Let me know if you have any questions!

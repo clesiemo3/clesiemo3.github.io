@@ -9,7 +9,7 @@ lead_text: 'Replacing the Data Table of your Visualization'
 
 This script is designed to swap between two different data tables within the same visualization. However, it can be utilized to replace the data table with a new one you've created/pulled from somewhere or just simply reorder and redesign your table with the column, sort, and column width options.
 
-```python
+{% highlight python %}
 ######################################################################
 ##Table Swapping Script
 ##This script swaps data tables and rebuilds your preferences.
@@ -72,4 +72,4 @@ otabCol.Width = 75
 
 #turn off the legend. I don't like it in a lot of cases personally
 myViz.Legend.Visible = False
-```
+{% endhighlight %}
